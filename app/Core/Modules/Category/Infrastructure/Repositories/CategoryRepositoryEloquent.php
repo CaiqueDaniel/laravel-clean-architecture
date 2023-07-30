@@ -5,6 +5,7 @@ namespace App\Core\Modules\Category\Infrastructure\Repositories;
 use App\Core\Modules\Category\Domain\Entities\Category;
 use App\Core\Modules\Category\Domain\Repositories\CategoryRepository;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 class CategoryRepositoryEloquent extends Model implements CategoryRepository
@@ -14,6 +15,18 @@ class CategoryRepositoryEloquent extends Model implements CategoryRepository
 
     /** @var Category[] */
     private array $entityQueue = [];
+
+    public function findAll(): Collection
+    {
+        $eloquentCollection = static::query()->get();
+
+        return $eloquentCollection->map(function (Model $eloquentModel) {
+            return Category::hydrate(
+                $eloquentModel->id,
+                $eloquentModel->title
+            );
+        });
+    }
 
     public function findById(int $id): ?Category
     {
