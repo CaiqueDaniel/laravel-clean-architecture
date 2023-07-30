@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use App\Core\Modules\Category\Domain\Repositories\CategoryRepository;
-use App\Core\Modules\Category\Infrastructure\Repositories\CategoryRepositoryEloquent;
-use App\Core\Modules\Post\Domain\Repositories\PostRepository;
-use App\Core\Modules\Post\Infrastructure\Repositories\PostRepositoryEloquent;
+use Core\Modules\Category\Domain\Repositories\CategoryRepository;
+use Core\Modules\Category\Infrastructure\Repositories\CategoryRepositoryEloquent;
+use Core\Modules\Post\Domain\Repositories\PostRepository;
+use Core\Modules\Post\Infrastructure\Repositories\PostRepositoryEloquent;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Core\Modules\Category\Domain\Entities;
+namespace Core\Modules\Category\Domain\Entities;
 
 use Illuminate\Contracts\Support\Arrayable;
 

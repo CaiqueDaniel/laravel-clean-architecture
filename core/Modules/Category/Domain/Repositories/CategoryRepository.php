@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Core\Modules\Category\Domain\Repositories;
+namespace Core\Modules\Category\Domain\Repositories;
 
-use App\Core\Modules\Category\Domain\Entities\Category;
+use Core\Modules\Category\Domain\Entities\Category;
 use Illuminate\Support\Collection;
 
 interface CategoryRepository

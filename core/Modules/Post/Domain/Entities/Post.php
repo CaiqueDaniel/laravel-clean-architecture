@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Core\Modules\Post\Domain\Entities;
+namespace Core\Modules\Post\Domain\Entities;
 
+use Core\Modules\Category\Domain\Entities\Category;
 use DateTime;
-use App\Core\Modules\Category\Domain\Entities\Category;
 use Illuminate\Contracts\Support\Arrayable;
 
 class Post implements Arrayable

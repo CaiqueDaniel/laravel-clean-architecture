@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Core\Modules\Post\Infrastructure\Repositories;
+namespace Core\Modules\Post\Infrastructure\Repositories;
 
-use App\Core\Modules\Category\Infrastructure\Repositories\CategoryRepositoryEloquent;
-use App\Core\Modules\Post\Domain\Repositories\PostRepository;
-use App\Core\Modules\Post\Domain\Entities\Post;
+use Core\Modules\Category\Infrastructure\Repositories\CategoryRepositoryEloquent;
+use Core\Modules\Post\Domain\Entities\Post;
+use Core\Modules\Post\Domain\Repositories\PostRepository;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 

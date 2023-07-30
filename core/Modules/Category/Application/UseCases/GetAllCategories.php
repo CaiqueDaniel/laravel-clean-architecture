@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Core\Modules\Category\Application\UseCases;
+namespace Core\Modules\Category\Application\UseCases;
 
-use App\Core\Modules\Category\Domain\Repositories\CategoryRepository;
+use Core\Modules\Category\Domain\Repositories\CategoryRepository;
 use Illuminate\Support\Collection;
 
 class GetAllCategories

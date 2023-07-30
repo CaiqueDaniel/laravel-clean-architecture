@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Core\Modules\Category\Application\UseCases;
+namespace Core\Modules\Category\Application\UseCases;
 
-use App\Core\Modules\Category\Domain\Entities\Category;
-use App\Core\Modules\Category\Domain\Repositories\CategoryRepository;
+use Core\Modules\Category\Domain\Entities\Category;
+use Core\Modules\Category\Domain\Repositories\CategoryRepository;
 
 class CreateCategory
 {

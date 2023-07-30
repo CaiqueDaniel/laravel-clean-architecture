@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Core\Modules\Post\Domain\Repositories;
+namespace Core\Modules\Post\Domain\Repositories;
 
-use App\Core\Modules\Post\Domain\Entities\Post;
+use Core\Modules\Post\Domain\Entities\Post;
 
 interface PostRepository
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Core\Modules\Category\Infrastructure\Repositories;
+namespace Core\Modules\Category\Infrastructure\Repositories;
 
-use App\Core\Modules\Category\Domain\Entities\Category;
-use App\Core\Modules\Category\Domain\Repositories\CategoryRepository;
+use Core\Modules\Category\Domain\Entities\Category;
+use Core\Modules\Category\Domain\Repositories\CategoryRepository;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;

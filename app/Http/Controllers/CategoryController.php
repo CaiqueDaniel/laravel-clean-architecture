@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Core\Modules\Category\Application\UseCases\{CreateCategory, GetAllCategories};
+use Core\Modules\Category\Application\UseCases\{CreateCategory};
+use Core\Modules\Category\Application\UseCases\GetAllCategories;
 use Illuminate\Http\{JsonResponse, Request};
 
 class CategoryController extends Controller
