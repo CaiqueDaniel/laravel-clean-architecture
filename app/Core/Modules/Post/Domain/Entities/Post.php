@@ -87,6 +87,7 @@ class Post implements Arrayable
             'title' => $this->title,
             'subtitle' => $this->subtitle,
             'article' => $this->article,
+            'published_at' => $this->publishedAt ?? null,
             'category' => $this->category?->toArray()
         ];
     }
