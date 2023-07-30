@@ -39,12 +39,13 @@ class CategoryRepositoryEloquent extends Model implements CategoryRepository
             foreach ($this->entityQueue as $entity) {
                 $properties = $entity->toArray();
 
-                if (empty($properties['id'])) {
-                    static::query()->create($properties);
+                if (!empty($properties['id'])) {
+                    static::query()->find($properties['id'])->update($properties);
                     continue;
                 }
 
-                static::query()->find($properties['id'])->update($properties);
+                $eloquentModel = static::query()->create($properties);
+                Category::hydrateId($eloquentModel->id, $entity);
             }
 
             $this->entityQueue = [];

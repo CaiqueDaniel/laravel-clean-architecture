@@ -47,4 +47,9 @@ class Category implements Arrayable
             ->setId($id)
             ->setTitle($title);
     }
+
+    public static function hydrateId(int $id, Category $category): static
+    {
+        return $category->setId($id);
+    }
 }
