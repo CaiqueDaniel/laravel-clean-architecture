@@ -6,6 +6,7 @@ use Core\Modules\Category\Infrastructure\Repositories\CategoryRepositoryEloquent
 use Core\Modules\Post\Domain\Entities\Post;
 use Core\Modules\Post\Domain\Repositories\PostRepository;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 class PostRepositoryEloquent extends Model implements PostRepository
@@ -68,5 +69,21 @@ class PostRepositoryEloquent extends Model implements PostRepository
     {
         $this->add($post);
         $this->flush();
+    }
+
+    public function findAll(): Collection
+    {
+        $eloquentCollection = static::query()->get();
+
+        return $eloquentCollection->map(function (Model $eloquentModel) {
+            return Post::hydrate(
+                $eloquentModel->id,
+                $eloquentModel->title,
+                $eloquentModel->subtitle,
+                $eloquentModel->article,
+                $eloquentModel->published_at,
+                $eloquentModel->category_id ? $this->categoryRepository->findById($eloquentModel->category_id) : null
+            );
+        });
     }
 }

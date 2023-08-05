@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\{CategoryController, PostController};
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,4 +22,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::controller(CategoryController::class)->group(function () {
     Route::get('category', 'index');
     Route::post('category', 'store');
+});
+
+Route::controller(PostController::class)->group(function () {
+    Route::get('post', 'index');
+    Route::post('post', 'store');
 });

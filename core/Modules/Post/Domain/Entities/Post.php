@@ -109,18 +109,20 @@ class Post implements Arrayable
         string    $title,
         string    $subtitle,
         string    $article,
-        ?DateTime $publisedAt,
+        ?DateTime $publishedAt,
         ?Category $category
     ): Post
     {
         $post = new Post();
+
+        if (!empty($publishedAt))
+            $post->setPublishedAt($publishedAt);
 
         return $post
             ->setId($id)
             ->setTitle($title)
             ->setSubtitle($subtitle)
             ->setArticle($article)
-            ->setPublishedAt($publisedAt)
             ->setCategory($category);
     }
 }
