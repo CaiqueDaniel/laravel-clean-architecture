@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 class PostRepositoryEloquent extends Model implements PostRepository
 {
     protected $table = 'posts';
-    protected $fillable = ['title', 'subtitle', 'article', 'category_id'];
+    protected $fillable = ['title', 'subtitle', 'article', 'published_at', 'category_id'];
 
     /** @var Post[] */
     private array $entityQueue = [];

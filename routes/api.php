@@ -27,4 +27,5 @@ Route::controller(CategoryController::class)->group(function () {
 Route::controller(PostController::class)->group(function () {
     Route::get('post', 'index');
     Route::post('post', 'store');
+    Route::patch('post/{id}/publish', 'publish');
 });

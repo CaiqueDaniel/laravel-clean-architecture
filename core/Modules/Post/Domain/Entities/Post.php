@@ -87,7 +87,7 @@ class Post implements Arrayable
             'title' => $this->title,
             'subtitle' => $this->subtitle,
             'article' => $this->article,
-            'published_at' => $this->publishedAt ?? null,
+            'published_at' => $this->publishedAt->format('Y-m-d H:i:s') ?? null,
             'category' => $this->category?->toArray()
         ];
     }
@@ -109,14 +109,14 @@ class Post implements Arrayable
         string    $title,
         string    $subtitle,
         string    $article,
-        ?DateTime $publishedAt,
+        ?string $publishedAt,
         ?Category $category
     ): Post
     {
         $post = new Post();
 
         if (!empty($publishedAt))
-            $post->setPublishedAt($publishedAt);
+            $post->setPublishedAt(new DateTime($publishedAt));
 
         return $post
             ->setId($id)
